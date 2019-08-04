@@ -8,6 +8,7 @@ function sum(x,y){
   return x+y
 }
 
+
 2) 
 function consoleReturn(x,y){
   console.log(x)
@@ -35,17 +36,43 @@ var object2={
 }
 */
 
-//1) WRITE YOUR CODE UNDER THIS LINE         
+//1) WRITE YOUR CODE UNDER THIS LINE     
+
+const sum = (x,y) =>{
+  return x+y
+
+}   
 
 //2) WRITE YOUR CODE UNDER THIS LINE         
+const consoleReturn =(x,y) =>{
+  console.log(consoleReturn(x))
+  return y
+}
 
-//3) WRITE YOUR CODE UNDER THIS LINE         
+
+//3) WRITE YOUR CODE UNDER THIS LINE  
+
+let name="Alex"
+let age=25
+let result="My name is: " + name + "and my age is: " + age       
 
 //4) WRITE YOUR CODE UNDER THIS LINE         
 
+let food="Fried Chicken"
+let color="Blue"
+const object={
+  food:food,
+  color:color
+}
+
+
 //5) WRITE YOUR CODE UNDER THIS LINE         
 
-
+var object2={
+  multi:function(a,b){
+    return a * b
+  }
+}
 
 
 
@@ -73,8 +100,16 @@ Output =>
 */
 
 // WRITE YOUR CODE UNDER THIS LINE
+class Computer {
 
+  constructor(OS,RAM,CPU) {
 
+    this.OS = OS;
+    this.RAM = RAM;
+    this.CPU = CPU;
+  
+}
+}
 
 
 
@@ -86,7 +121,8 @@ please fix the errors inside them
 */
 
 // App Component
-import Tasks from './components/Tasks';
+import React, { Component } from 'react';
+import Tasks from './components/Apps';
 
 export default class App extends Component {
   state = {
@@ -98,28 +134,31 @@ export default class App extends Component {
   }
   render() {
     return (
-      <h1>App Component => state.title</h1>
-      <button onClick={this.changeTitle}>Change Title</button>
-      <Tasks tasks={this.todos} changeTitleFromChild={this.changeTitle} />
+      <div>      
+        <h1>App Component =>{state.title}</h1>
+        <button onClick={this.changeTitle}>Change Title</button>
+        <Tasks tasks={this.todos} changeTitleFromChild={this.changeTitle} />
+      </div>
     );
   }
 }
 
 // Tasks Component
 import React, { Component } from 'react';
+import Tasks from './components/Tasks';
 
-class Tasks extends Component {
+export default class Tasks extends Component {
   state = {
     day: "Sat"
   };
   changeDay() {
-    day = 'Sun'
+    state.day = 'Sun'
   }
 
   render() {
     return (
       <div>
-        <h1>Tasks Component => state.day</h1>
+        <h1>Tasks Component => {state.day}</h1>
         <button onClick={this.changeDay}>Change Tasks State</button>
         <button onClick={changeTitle}>Change App State</button>
       </div>
